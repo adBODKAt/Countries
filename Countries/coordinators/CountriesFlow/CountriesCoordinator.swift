@@ -17,11 +17,13 @@ class CountriesCoordinator: Coordinator, CountriesCoordinatorProtocol {
     // Private
     var bag: DisposeBag = DisposeBag()
     let countriesService = CountriesService()
+    let reachabilityService = ReachabilityService()
     
     override func start() {
         do {
             let moduleInput = CountriesListViewModel.ModuleInputData(
-                countriesService: countriesService
+                countriesService: countriesService,
+                reachabilityService: reachabilityService
             )
             let module = try CountriesListConfigurator.configure(data: moduleInput)
             
@@ -39,7 +41,8 @@ class CountriesCoordinator: Coordinator, CountriesCoordinatorProtocol {
         do {
             let moduleInput = CountryViewModel.ModuleInputData(
                 countryService: countriesService,
-                countryName: name
+                countryName: name,
+                reachabilityService: reachabilityService
             )
             let module = try CountryConfigurator.configure(data: moduleInput)
             self.router.push(module.viewController, animated: animated)

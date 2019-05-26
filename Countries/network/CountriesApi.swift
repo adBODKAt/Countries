@@ -20,18 +20,11 @@ private extension String {
     var urlEscaped: String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
-    
-    var utf8Encoded: Data {
-        return data(using: .utf8)!
-    }
 }
 
 extension CountriesApi: TargetType {
     var baseURL: URL {
-        switch self {
-        default:
-            return URL(string: "https://restcountries.eu/rest/v2")!
-        }
+        return URL(string: "https://restcountries.eu/rest/v2")!
     }
     
     var path: String {
@@ -48,16 +41,10 @@ extension CountriesApi: TargetType {
     }
         
     var method: Moya.Method {
-        switch self {
-        default:
-            return .get
-        }
+        return .get
     }
     var task: Task {
-        switch self {
-        default:
-            return .requestParameters(parameters: (parameters) ?? [:], encoding: parameterEncoding)
-        }
+        return .requestParameters(parameters: (parameters) ?? [:], encoding: parameterEncoding)
     }
     var parameters: [String : Any]? {
         return nil
@@ -69,10 +56,6 @@ extension CountriesApi: TargetType {
         
     var headers: [String: String]? {
         return nil
-//        switch self {
-//        default:
-//            return ["Content-type": "application/json"]
-//        }
     }
         
     var parameterEncoding: Moya.ParameterEncoding {

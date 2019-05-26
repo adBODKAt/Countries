@@ -14,6 +14,7 @@ extension CountryViewModel {
     struct ModuleInputData {
         let countryService: CountryServiceProtocol
         let countryName: String
+        let reachabilityService: ReachabilityServiceProtocol
     }
     
     // MARK: - module input structure

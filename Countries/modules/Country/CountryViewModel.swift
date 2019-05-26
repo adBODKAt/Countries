@@ -103,7 +103,9 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
     }
     
     func errorLoad(_ error: NSError?) {
-        if error == nil {
+        if !moduleInputData.reachabilityService.hasInternetConnection {
+            modelState.show(error: moduleInputData.reachabilityService.reachabilityError())
+        } else if error == nil {
             let err = NSError(domain: "app.countries", code: 0, userInfo: [NSLocalizedFailureErrorKey: "Неизвестная ошибка"])
             modelState.show(error: err)
         } else {

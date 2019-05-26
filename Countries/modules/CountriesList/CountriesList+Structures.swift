@@ -13,6 +13,7 @@ extension CountriesListViewModel {
     // MARK: - initial module data
     struct ModuleInputData {
         let countriesService: CountriesServiceProtocol
+        let reachabilityService: ReachabilityServiceProtocol
     }
     
     // MARK: - module input structure

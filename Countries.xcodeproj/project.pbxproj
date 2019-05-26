@@ -51,6 +51,9 @@
 		DFB9946E229B346F00279D7F /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9946D229B346F00279D7F /* CountryViewController.swift */; };
 		DFB99470229B348200279D7F /* CountryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9946F229B348200279D7F /* CountryConfigurator.swift */; };
 		DFB99472229B349500279D7F /* Country+Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99471229B349500279D7F /* Country+Structures.swift */; };
+		DFFFF274229B532D006E3397 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFF273229B532C006E3397 /* ReachabilityService.swift */; };
+		DFFFF277229B55B2006E3397 /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFF275229B55B2006E3397 /* Response+ObjectMapper.swift */; };
+		DFFFF278229B55B2006E3397 /* ObservableType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFF276229B55B2006E3397 /* ObservableType+ObjectMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +63,6 @@
 		DF60B08E229B40C400873104 /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 		DF60B090229B41E300873104 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		DF60B095229B495C00873104 /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
-		DF60B099229B4C1600873104 /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
-		DF60B09A229B4C1600873104 /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		DF60B09B229B4C2D00873104 /* UIViewController+UIAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertAction.swift"; sourceTree = "<group>"; };
 		DFB99401229ADEA900279D7F /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB99404229ADEA900279D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +103,9 @@
 		DFB9946D229B346F00279D7F /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		DFB9946F229B348200279D7F /* CountryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryConfigurator.swift; sourceTree = "<group>"; };
 		DFB99471229B349500279D7F /* Country+Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+Structures.swift"; sourceTree = "<group>"; };
+		DFFFF273229B532C006E3397 /* ReachabilityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		DFFFF275229B55B2006E3397 /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
+		DFFFF276229B55B2006E3397 /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
 		ECF42F3796D57180F97475A0 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		FB8F9467B281CF5B1BAFCD25 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,8 +187,8 @@
 		DF60B098229B4C1600873104 /* moya */ = {
 			isa = PBXGroup;
 			children = (
-				DF60B099229B4C1600873104 /* ObservableType+ObjectMapper.swift */,
-				DF60B09A229B4C1600873104 /* Response+ObjectMapper.swift */,
+				DFFFF276229B55B2006E3397 /* ObservableType+ObjectMapper.swift */,
+				DFFFF275229B55B2006E3397 /* Response+ObjectMapper.swift */,
 			);
 			path = moya;
 			sourceTree = "<group>";
@@ -286,6 +290,7 @@
 		DFB9941C229AE45700279D7F /* services */ = {
 			isa = PBXGroup;
 			children = (
+				DFFFF273229B532C006E3397 /* ReachabilityService.swift */,
 				DFB99430229B0BA700279D7F /* CountriesService.swift */,
 			);
 			path = services;
@@ -574,13 +579,16 @@
 				DFB99426229AE50F00279D7F /* RouteHandler.swift in Sources */,
 				DF60B08C229B40A100873104 /* InfoCell.swift in Sources */,
 				DFB9943A229B0F3F00279D7F /* CountriesListViewModel.swift in Sources */,
+				DFFFF277229B55B2006E3397 /* Response+ObjectMapper.swift in Sources */,
 				DFB99440229B0F6700279D7F /* TableCellProtocol.swift in Sources */,
+				DFFFF278229B55B2006E3397 /* ObservableType+ObjectMapper.swift in Sources */,
 				DFB99456229B212600279D7F /* CountryModel.swift in Sources */,
 				DF60B08F229B40C400873104 /* InfoRow.swift in Sources */,
 				DFB99437229B0F3F00279D7F /* CountriesList+Structures.swift in Sources */,
 				DFB99448229B100200279D7F /* Observable+Operators.swift in Sources */,
 				DFB99429229AE50F00279D7F /* BaseCoordinator.swift in Sources */,
 				DFB9946A229B345600279D7F /* CountryView.swift in Sources */,
+				DFFFF274229B532D006E3397 /* ReachabilityService.swift in Sources */,
 				DFB99428229AE50F00279D7F /* Presentable.swift in Sources */,
 				DFB9944B229B180E00279D7F /* CountriesCoordinator.swift in Sources */,
 				DFB99465229B29E000279D7F /* CountryShortCell.swift in Sources */,
