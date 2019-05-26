@@ -14,6 +14,7 @@ import RxDataSources
 class CountriesListViewController: UIViewController {
     
     // MARK: - Properties
+    private var repeatAction = PublishRelay<Void>()
     
     // Dependencies
     var viewModel: CountriesListViewOutput?
@@ -70,7 +71,8 @@ class CountriesListViewController: UIViewController {
         }
         
         let input = CountriesListViewModel.Input(
-            cellSelect: customView.tableView.rx.itemSelected
+            cellSelect: customView.tableView.rx.itemSelected,
+            repeatAction: repeatAction.asObservable()
         )
         let output = model.configure(input: input)
         
@@ -89,17 +91,37 @@ class CountriesListViewController: UIViewController {
             }
         }).disposed(by: bag)
 
-//        output.error.observeOn(MainScheduler.instance)
-//            .subscribe(onNext: { [weak self] (error) in
-//            }).disposed(by: bag)
+        output.error.observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (error) in
+                self?.showAlertMessageFor(error: error)
+            }).disposed(by: bag)
+        
         viewModel?.viewReady()
     }
     
     private func configureUI() {
     }
     
-    deinit {
+    func showAlertMessageFor(error: NSError?) {
+        var errorMessage = ""
+        if let error = error {
+            errorMessage = error.localizedDescription
+        } else {
+            errorMessage = "Неизвестная ошибка"
+        }
         
-        print("CardsViewController deinit")
+        let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Повторить", style: UIAlertAction.Style.default) { [unowned self] (_) in
+            self.repeatAction.accept(())
+        }
+        alertController.addAction(alertAction)
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    deinit {
+        print("CountriesListViewController deinit")
     }
 }

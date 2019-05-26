@@ -29,6 +29,7 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     
     struct Input {
         let cellSelect: ControlEvent<IndexPath>
+        let repeatAction: Observable<Void>
     }
     
     struct Output {
@@ -65,8 +66,12 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     
     func configure(input: Input) -> Output {
         // Configure input
-        input.cellSelect.asObservable().subscribe(onNext: { [weak self] (ip) in
-            self?.handleCellSelectionAt(ip: ip)
+        input.cellSelect.asObservable().subscribe(onNext: { [unowned self] (ip) in
+            self.handleCellSelectionAt(ip: ip)
+        }).disposed(by: bag)
+        
+        input.repeatAction.subscribe(onNext: { [unowned self] (_) in
+            self.loadData()
         }).disposed(by: bag)
         // Configure output
         return Output(title: title.asObservable(),
@@ -89,8 +94,12 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     func viewReady() {
         modelState.change(state: .loading)
         
+        loadData()
+    }
+    
+    func loadData() {
         self.moduleInputData.countriesService.loadCountriesAll { [weak self] (countries, error) in
-            if let countries = countries {
+            if let countries = countries, countries.count > 0 {
                 self?.reloadData(countries)
             } else {
                 self?.errorLoad(error)
@@ -99,7 +108,12 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     }
     
     func errorLoad(_ error: NSError?) {
-        modelState.show(error: error)
+        if error == nil {
+            let err = NSError(domain: "app.countries", code: 0, userInfo: [NSLocalizedFailureErrorKey: "Неизвестная ошибка"])
+            modelState.show(error: err)
+        } else {
+            modelState.show(error: error)
+        }
     }
     
     func reloadData(_ countries: [CountryModel]) {

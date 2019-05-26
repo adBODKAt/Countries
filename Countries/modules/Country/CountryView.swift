@@ -22,6 +22,7 @@ class CountryView: UIView {
         view.separatorStyle = .singleLine
         view.estimatedRowHeight = 80.0
         view.rowHeight = UITableView.automaticDimension
+        view.allowsSelection = false
         view.tableFooterView = UIView()
         return view
     }()

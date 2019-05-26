@@ -25,6 +25,7 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
     }
     
     struct Input {
+        let repeatAction: Observable<Void>
     }
     
     struct Output {
@@ -61,6 +62,9 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
     
     func configure(input: Input) -> Output {
         // Configure input
+        input.repeatAction.subscribe(onNext: { [unowned self] (_) in
+            self.loadData()
+        }).disposed(by: bag)
         // Configure output
         title.accept(moduleInputData.countryName)
         return Output(title: title.asObservable(),
@@ -82,6 +86,10 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
     func viewReady() {
         modelState.change(state: .loading)
         
+        loadData()
+    }
+    
+    func loadData() {
         self.moduleInputData.countryService.loadCountryBy(name: moduleInputData.countryName) { [weak self] (countries, error) in
             if let countries = countries, countries.count > 0 {
                 self?.reloadData(countries[0])

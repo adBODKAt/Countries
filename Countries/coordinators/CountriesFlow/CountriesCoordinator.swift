@@ -25,8 +25,8 @@ class CountriesCoordinator: Coordinator, CountriesCoordinatorProtocol {
             )
             let module = try CountriesListConfigurator.configure(data: moduleInput)
             
-            module.moduleOutput.countryName.subscribe(onNext: { [weak self] (name) in
-                self?.showCountryWith(name: name, animated: true)
+            module.moduleOutput.countryName.subscribe(onNext: { [unowned self] (name) in
+                self.showCountryWith(name: name, animated: true)
             }).disposed(by: bag)
             
             self.router.setModules( [module.viewController] )

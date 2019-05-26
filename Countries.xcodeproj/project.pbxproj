@@ -30,7 +30,7 @@
 		DFB99438229B0F3F00279D7F /* CountriesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99433229B0F3E00279D7F /* CountriesListConfigurator.swift */; };
 		DFB99439229B0F3F00279D7F /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99434229B0F3F00279D7F /* CountriesListView.swift */; };
 		DFB9943A229B0F3F00279D7F /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99435229B0F3F00279D7F /* CountriesListViewModel.swift */; };
-		DFB9943B229B0F3F00279D7F /* CountriesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99436229B0F3F00279D7F /* CountriesListController.swift */; };
+		DFB9943B229B0F3F00279D7F /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99436229B0F3F00279D7F /* CountriesListViewController.swift */; };
 		DFB99440229B0F6700279D7F /* TableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9943D229B0F6700279D7F /* TableCellProtocol.swift */; };
 		DFB99441229B0F6700279D7F /* TableRawProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9943F229B0F6700279D7F /* TableRawProtocol.swift */; };
 		DFB99444229B0FE100279D7F /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99443229B0FE100279D7F /* RxViewModel.swift */; };
@@ -49,7 +49,7 @@
 		DFB99468229B29FE00279D7F /* CountryShortRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99467229B29FE00279D7F /* CountryShortRow.swift */; };
 		DFB9946A229B345600279D7F /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99469229B345600279D7F /* CountryView.swift */; };
 		DFB9946C229B346300279D7F /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9946B229B346300279D7F /* CountryViewModel.swift */; };
-		DFB9946E229B346F00279D7F /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9946D229B346F00279D7F /* CountryController.swift */; };
+		DFB9946E229B346F00279D7F /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9946D229B346F00279D7F /* CountryViewController.swift */; };
 		DFB99470229B348200279D7F /* CountryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9946F229B348200279D7F /* CountryConfigurator.swift */; };
 		DFB99472229B349500279D7F /* Country+Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99471229B349500279D7F /* Country+Structures.swift */; };
 /* End PBXBuildFile section */
@@ -80,7 +80,7 @@
 		DFB99433229B0F3E00279D7F /* CountriesListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListConfigurator.swift; sourceTree = "<group>"; };
 		DFB99434229B0F3F00279D7F /* CountriesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 		DFB99435229B0F3F00279D7F /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
-		DFB99436229B0F3F00279D7F /* CountriesListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListController.swift; sourceTree = "<group>"; };
+		DFB99436229B0F3F00279D7F /* CountriesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		DFB9943D229B0F6700279D7F /* TableCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellProtocol.swift; sourceTree = "<group>"; };
 		DFB9943F229B0F6700279D7F /* TableRawProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRawProtocol.swift; sourceTree = "<group>"; };
 		DFB99443229B0FE100279D7F /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		DFB99467229B29FE00279D7F /* CountryShortRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryShortRow.swift; sourceTree = "<group>"; };
 		DFB99469229B345600279D7F /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		DFB9946B229B346300279D7F /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
-		DFB9946D229B346F00279D7F /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
+		DFB9946D229B346F00279D7F /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		DFB9946F229B348200279D7F /* CountryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryConfigurator.swift; sourceTree = "<group>"; };
 		DFB99471229B349500279D7F /* Country+Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+Structures.swift"; sourceTree = "<group>"; };
 		ECF42F3796D57180F97475A0 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 			children = (
 				DFB99432229B0F3E00279D7F /* CountriesList+Structures.swift */,
 				DFB99433229B0F3E00279D7F /* CountriesListConfigurator.swift */,
-				DFB99436229B0F3F00279D7F /* CountriesListController.swift */,
+				DFB99436229B0F3F00279D7F /* CountriesListViewController.swift */,
 				DFB99434229B0F3F00279D7F /* CountriesListView.swift */,
 				DFB99435229B0F3F00279D7F /* CountriesListViewModel.swift */,
 			);
@@ -281,7 +281,7 @@
 			children = (
 				DFB99469229B345600279D7F /* CountryView.swift */,
 				DFB9946B229B346300279D7F /* CountryViewModel.swift */,
-				DFB9946D229B346F00279D7F /* CountryController.swift */,
+				DFB9946D229B346F00279D7F /* CountryViewController.swift */,
 				DFB9946F229B348200279D7F /* CountryConfigurator.swift */,
 				DFB99471229B349500279D7F /* Country+Structures.swift */,
 			);
@@ -537,13 +537,13 @@
 				DFB99441229B0F6700279D7F /* TableRawProtocol.swift in Sources */,
 				DFB9945F229B259100279D7F /* Response+ObjectMapper.swift in Sources */,
 				DFB9942A229AE50F00279D7F /* Router.swift in Sources */,
-				DFB9946E229B346F00279D7F /* CountryController.swift in Sources */,
+				DFB9946E229B346F00279D7F /* CountryViewController.swift in Sources */,
 				DF60B091229B41E300873104 /* CurrencyModel.swift in Sources */,
 				DFB99407229ADEA900279D7F /* ViewController.swift in Sources */,
 				DFB9944E229B189F00279D7F /* CoordinatorFactory.swift in Sources */,
 				DFB99472229B349500279D7F /* Country+Structures.swift in Sources */,
 				DFB99438229B0F3F00279D7F /* CountriesListConfigurator.swift in Sources */,
-				DFB9943B229B0F3F00279D7F /* CountriesListController.swift in Sources */,
+				DFB9943B229B0F3F00279D7F /* CountriesListViewController.swift in Sources */,
 				DFB9945A229B246400279D7F /* CountriesApiResponse.swift in Sources */,
 				DFB99405229ADEA900279D7F /* AppDelegate.swift in Sources */,
 				DFB99439229B0F3F00279D7F /* CountriesListView.swift in Sources */,
