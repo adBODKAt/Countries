@@ -61,7 +61,7 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
         print("-- CountryViewModel dead")
     }
     
-    // MARK: - CardsViewOutput
+    // MARK: - CountryViewOutput
     
     func configure(input: Input) -> Output {
         // Configure input
@@ -113,7 +113,9 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
     
     func reloadData(_ country: CountryModel) {
         var arr = [TableRow]()
-        let row = tableRowFor(country: country)
+        
+        let row = CountryShortRow()
+        row.configureWith(country: country)
         arr.append(row)
         
         if country.borders.count > 0 {
@@ -136,15 +138,5 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
         
         tableData.accept([SectionModel(model: "", items:arr)])
         modelState.change(state: .normal)
-    }
-}
-
-extension CountryViewModel {
-    func tableRowFor(country: CountryModel) -> TableRow {
-        let row = CountryShortRow()
-        row.name = country.name
-        row.nativeName = country.nativeName
-        row.population = country.population
-        return row
     }
 }

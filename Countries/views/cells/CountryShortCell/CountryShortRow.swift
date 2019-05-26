@@ -14,7 +14,7 @@ class CountryShortRow: TableRow {
     
     var name: String = ""
     var nativeName: String = ""
-    var population: Int = 0
+    private var population: Int = 0
     var populationText: String {
         return "Население(людей): " + String(population)
     }
@@ -37,5 +37,11 @@ class CountryShortRow: TableRow {
             return true
         }
         return false
+    }
+    
+    func configureWith(country: CountryModel) {
+        name = country.name
+        nativeName = country.nativeName
+        population = country.population
     }
 }
