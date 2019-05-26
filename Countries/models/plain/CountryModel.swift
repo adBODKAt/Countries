@@ -12,16 +12,11 @@ import ObjectMapper
 public struct CountryModel: Mappable, Equatable {
     
     var name: String = ""
-    var topLevelDomain = [String]()
-    var capital: String = ""
-    var region: String = ""
-    var subregion: String = ""
     var population: Int = 0
     var nativeName: String = ""
-    var flag: String = ""
     
-    var borders = [String]()
-    var currencies = [CurrencyModel]()
+    var borders: [String]?
+    var currencies: [CurrencyModel]?
 
     init() {}
     
@@ -29,13 +24,8 @@ public struct CountryModel: Mappable, Equatable {
     
     mutating public func mapping(map: Map) {
         name <- map["name"]
-        topLevelDomain <- map["topLevelDomain"]
-        capital <- map["capital"]
-        region <- map["region"]
-        subregion <- map["subregion"]
         population <- map["population"]
         nativeName <- map["nativeName"]
-        flag <- map["flag"]
         
         borders <- map["borders"]
         currencies <- map["currencies"]
@@ -44,13 +34,8 @@ public struct CountryModel: Mappable, Equatable {
     // MARK: - Equatable
     public static func == (lhs: CountryModel, rhs: CountryModel) -> Bool {
         if lhs.name != rhs.name { return false }
-        if lhs.topLevelDomain != rhs.topLevelDomain { return false }
-        if lhs.capital != rhs.capital { return false }
-        if lhs.region != rhs.region { return false }
-        if lhs.subregion != rhs.subregion { return false }
         if lhs.population != rhs.population { return false }
         if lhs.nativeName != rhs.nativeName { return false }
-        if lhs.flag != rhs.flag { return false }
         
         if lhs.borders != rhs.borders { return false }
         if lhs.currencies != rhs.currencies { return false }

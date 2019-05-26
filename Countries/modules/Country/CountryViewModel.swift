@@ -118,16 +118,16 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
         row.configureWith(country: country)
         arr.append(row)
         
-        if country.borders.count > 0 {
-            let bordersString = country.borders.joined(separator: ", ")
+        if let borders = country.borders, borders.count > 0 {
+            let bordersString = borders.joined(separator: ", ")
             let row = InfoRow()
             row.title = borderTitle
             row.info = bordersString
             arr.append(row)
         }
         
-        if country.currencies.count > 0 {
-            let currencyString = country.currencies.compactMap { (model) -> String? in
+        if let currencies = country.currencies, currencies.count > 0 {
+            let currencyString = currencies.compactMap { (model) -> String? in
                 return model.name + "(" + model.symbol + "): " + model.code
             }.joined(separator: "\n")
             let row = InfoRow()

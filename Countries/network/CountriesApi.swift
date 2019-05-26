@@ -37,9 +37,9 @@ extension CountriesApi: TargetType {
     var path: String {
         switch self {
         case .list:
-            return "/all"
+            return "/all?fields=name;nativeName;population"
         case .country(let name):
-            return "/name/" + name.urlEscaped
+            return "/name/" + name.urlEscaped + "?fields=name;nativeName;population;currencies;borders"
         }
     }
         
