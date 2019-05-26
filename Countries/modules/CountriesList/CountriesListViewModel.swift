@@ -59,7 +59,7 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     }
     
     deinit {
-        print("-- CardsViewModel dead")
+        print("-- CountriesListViewModel dead")
     }
     
     // MARK: - CardsViewOutput
@@ -117,7 +117,6 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     }
     
     func reloadData(_ countries: [CountryModel]) {
-        modelState.change(state: .normal)
         self.countries.removeAll()
         self.countries.append(contentsOf: countries)
         
@@ -127,14 +126,7 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
             arr.append(row)
         }
         tableData.accept( [SectionModel(model: "", items: arr)] )
-    }
-    
-    func tableRowFor(country: CountryModel) -> TableRow {
-        let row = CountryShortRow()
-        row.name = country.name
-        row.nativeName = country.nativeName
-        row.population = country.population
-        return row
+        modelState.change(state: .normal)
     }
     
     func handleCellSelectionAt(ip: IndexPath) {
@@ -143,5 +135,15 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
             let name = countries[index].name
             countryName.accept(name)
         }
+    }
+}
+
+extension CountriesListViewModel {
+    func tableRowFor(country: CountryModel) -> TableRow {
+        let row = CountryShortRow()
+        row.name = country.name
+        row.nativeName = country.nativeName
+        row.population = country.population
+        return row
     }
 }

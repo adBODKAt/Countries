@@ -13,12 +13,12 @@
 		DF60B08F229B40C400873104 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B08E229B40C400873104 /* InfoRow.swift */; };
 		DF60B091229B41E300873104 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B090229B41E300873104 /* CurrencyModel.swift */; };
 		DF60B096229B495C00873104 /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B095229B495C00873104 /* PullToRefreshView.swift */; };
+		DF60B09C229B4C2D00873104 /* UIViewController+UIAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B09B229B4C2D00873104 /* UIViewController+UIAlertAction.swift */; };
 		DFB99405229ADEA900279D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99404229ADEA900279D7F /* AppDelegate.swift */; };
 		DFB99407229ADEA900279D7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99406229ADEA900279D7F /* ViewController.swift */; };
 		DFB9940A229ADEA900279D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB99408229ADEA900279D7F /* Main.storyboard */; };
 		DFB9940C229ADEAC00279D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB9940B229ADEAC00279D7F /* Assets.xcassets */; };
 		DFB9940F229ADEAC00279D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB9940D229ADEAC00279D7F /* LaunchScreen.storyboard */; };
-		DFB9941E229AE48600279D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9941D229AE48600279D7F /* Constants.swift */; };
 		DFB99426229AE50F00279D7F /* RouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99421229AE50F00279D7F /* RouteHandler.swift */; };
 		DFB99427229AE50F00279D7F /* Coordinatorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99422229AE50F00279D7F /* Coordinatorable.swift */; };
 		DFB99428229AE50F00279D7F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99423229AE50F00279D7F /* Presentable.swift */; };
@@ -62,6 +62,9 @@
 		DF60B08E229B40C400873104 /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 		DF60B090229B41E300873104 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		DF60B095229B495C00873104 /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
+		DF60B099229B4C1600873104 /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
+		DF60B09A229B4C1600873104 /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
+		DF60B09B229B4C2D00873104 /* UIViewController+UIAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertAction.swift"; sourceTree = "<group>"; };
 		DFB99401229ADEA900279D7F /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB99404229ADEA900279D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB99406229ADEA900279D7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +72,6 @@
 		DFB9940B229ADEAC00279D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFB9940E229ADEAC00279D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFB99410229ADEAC00279D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFB9941D229AE48600279D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DFB99421229AE50F00279D7F /* RouteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteHandler.swift; sourceTree = "<group>"; };
 		DFB99422229AE50F00279D7F /* Coordinatorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinatorable.swift; sourceTree = "<group>"; };
 		DFB99423229AE50F00279D7F /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
@@ -173,6 +175,24 @@
 			path = pullToRefresh;
 			sourceTree = "<group>";
 		};
+		DF60B097229B4C0800873104 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				DF60B098229B4C1600873104 /* moya */,
+				DF60B09B229B4C2D00873104 /* UIViewController+UIAlertAction.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		DF60B098229B4C1600873104 /* moya */ = {
+			isa = PBXGroup;
+			children = (
+				DF60B099229B4C1600873104 /* ObservableType+ObjectMapper.swift */,
+				DF60B09A229B4C1600873104 /* Response+ObjectMapper.swift */,
+			);
+			path = moya;
+			sourceTree = "<group>";
+		};
 		DFB993F8229ADEA900279D7F = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +214,7 @@
 		DFB99403229ADEA900279D7F /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				DF60B097229B4C0800873104 /* extension */,
 				DF60B092229B438C00873104 /* views */,
 				DFB99452229B208B00279D7F /* protocols */,
 				DFB99442229B0FD700279D7F /* components */,
@@ -224,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				DFB99404229ADEA900279D7F /* AppDelegate.swift */,
-				DFB9941D229AE48600279D7F /* Constants.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -563,6 +583,7 @@
 				DFB99431229B0BA700279D7F /* CountriesService.swift in Sources */,
 				DFB9946C229B346300279D7F /* CountryViewModel.swift in Sources */,
 				DFB99444229B0FE100279D7F /* RxViewModel.swift in Sources */,
+				DF60B09C229B4C2D00873104 /* UIViewController+UIAlertAction.swift in Sources */,
 				DFB9945E229B259100279D7F /* ObservableType+ObjectMapper.swift in Sources */,
 				DFB99451229B1CBC00279D7F /* AppCoordinator.swift in Sources */,
 				DFB9942D229B098600279D7F /* CountriesApi.swift in Sources */,
@@ -577,7 +598,6 @@
 				DFB99448229B100200279D7F /* Observable+Operators.swift in Sources */,
 				DFB99429229AE50F00279D7F /* BaseCoordinator.swift in Sources */,
 				DFB9946A229B345600279D7F /* CountryView.swift in Sources */,
-				DFB9941E229AE48600279D7F /* Constants.swift in Sources */,
 				DFB99428229AE50F00279D7F /* Presentable.swift in Sources */,
 				DFB9944B229B180E00279D7F /* CountriesCoordinator.swift in Sources */,
 				DFB99465229B29E000279D7F /* CountryShortCell.swift in Sources */,

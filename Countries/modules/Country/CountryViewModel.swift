@@ -18,6 +18,9 @@ protocol CountryViewOutput {
 
 class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutput {
     
+    let borderTitle = "Соседние страны:"
+    let currencyTitle = "Валюта:"
+    
     typealias SectionType = SectionModel<String, TableRawProtocol>
     
     // MARK: In/Out struct
@@ -55,7 +58,7 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
     }
     
     deinit {
-        print("-- CardsViewModel dead")
+        print("-- CountryViewModel dead")
     }
     
     // MARK: - CardsViewOutput
@@ -100,12 +103,15 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
     }
     
     func errorLoad(_ error: NSError?) {
-        modelState.show(error: error)
+        if error == nil {
+            let err = NSError(domain: "app.countries", code: 0, userInfo: [NSLocalizedFailureErrorKey: "Неизвестная ошибка"])
+            modelState.show(error: err)
+        } else {
+            modelState.show(error: error)
+        }
     }
     
     func reloadData(_ country: CountryModel) {
-        modelState.change(state: .normal)
-        
         var arr = [TableRow]()
         let row = tableRowFor(country: country)
         arr.append(row)
@@ -113,7 +119,7 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
         if country.borders.count > 0 {
             let bordersString = country.borders.joined(separator: ", ")
             let row = InfoRow()
-            row.title = "Соседние страны:"
+            row.title = borderTitle
             row.info = bordersString
             arr.append(row)
         }
@@ -123,14 +129,17 @@ class CountryViewModel: RxViewModelType, RxViewModelModuleType, CountryViewOutpu
                 return model.name + "(" + model.symbol + "): " + model.code
             }.joined(separator: "\n")
             let row = InfoRow()
-            row.title = "Валюта:"
+            row.title = currencyTitle
             row.info = currencyString
             arr.append(row)
         }
         
         tableData.accept([SectionModel(model: "", items:arr)])
+        modelState.change(state: .normal)
     }
-    
+}
+
+extension CountryViewModel {
     func tableRowFor(country: CountryModel) -> TableRow {
         let row = CountryShortRow()
         row.name = country.name

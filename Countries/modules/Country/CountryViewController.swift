@@ -102,22 +102,10 @@ class CountryViewController: UIViewController {
     }
     
     func showAlertMessageFor(error: NSError?) {
-        var errorMessage = ""
-        if let error = error {
-            errorMessage = error.localizedDescription
-        } else {
-            errorMessage = "Неизвестная ошибка"
-        }
-        
-        let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Повторить", style: UIAlertAction.Style.default) { [unowned self] (_) in
             self.repeatAction.accept(())
         }
-        alertController.addAction(alertAction)
-        
-        let cancelAction = UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
+        self.showCancellableAlertWith(userAction: alertAction, error: error)
     }
     
     deinit {
