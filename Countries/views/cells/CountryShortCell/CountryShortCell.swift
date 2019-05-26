@@ -22,6 +22,7 @@ class CountryShortCell: UITableViewCell, TableCellProtocol {
     private func setup() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
+        selectionStyle = .none
     }
     
     func configureWithModel(model: TableRawProtocol, animated:Bool) {

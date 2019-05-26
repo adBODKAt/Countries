@@ -12,6 +12,7 @@
 		DF60B08D229B40A100873104 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF60B08B229B40A100873104 /* InfoCell.xib */; };
 		DF60B08F229B40C400873104 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B08E229B40C400873104 /* InfoRow.swift */; };
 		DF60B091229B41E300873104 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B090229B41E300873104 /* CurrencyModel.swift */; };
+		DF60B096229B495C00873104 /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B095229B495C00873104 /* PullToRefreshView.swift */; };
 		DFB99405229ADEA900279D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99404229ADEA900279D7F /* AppDelegate.swift */; };
 		DFB99407229ADEA900279D7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB99406229ADEA900279D7F /* ViewController.swift */; };
 		DFB9940A229ADEA900279D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB99408229ADEA900279D7F /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		DF60B08B229B40A100873104 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		DF60B08E229B40C400873104 /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 		DF60B090229B41E300873104 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		DF60B095229B495C00873104 /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
 		DFB99401229ADEA900279D7F /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB99404229ADEA900279D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB99406229ADEA900279D7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		DF60B092229B438C00873104 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				DF60B094229B494000873104 /* pullToRefresh */,
 				DF60B093229B439000873104 /* cells */,
 			);
 			path = views;
@@ -160,6 +163,14 @@
 				DF60B089229B408B00873104 /* InfoCell */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		DF60B094229B494000873104 /* pullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				DF60B095229B495C00873104 /* PullToRefreshView.swift */,
+			);
+			path = pullToRefresh;
 			sourceTree = "<group>";
 		};
 		DFB993F8229ADEA900279D7F = {
@@ -534,6 +545,7 @@
 				DFB99468229B29FE00279D7F /* CountryShortRow.swift in Sources */,
 				DFB99446229B0FF800279D7F /* ViewModelState.swift in Sources */,
 				DFB9942F229B0AB500279D7F /* Network.swift in Sources */,
+				DF60B096229B495C00873104 /* PullToRefreshView.swift in Sources */,
 				DFB99441229B0F6700279D7F /* TableRawProtocol.swift in Sources */,
 				DFB9945F229B259100279D7F /* Response+ObjectMapper.swift in Sources */,
 				DFB9942A229AE50F00279D7F /* Router.swift in Sources */,

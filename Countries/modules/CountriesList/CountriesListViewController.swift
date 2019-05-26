@@ -94,7 +94,9 @@ class CountriesListViewController: UIViewController {
         output.error.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (error) in
                 self?.showAlertMessageFor(error: error)
-            }).disposed(by: bag)
+        }).disposed(by: bag)
+        
+        customView.pullToRefreshView.loadSwitch.bind(to: repeatAction).disposed(by: bag)
         
         viewModel?.viewReady()
     }

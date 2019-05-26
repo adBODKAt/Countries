@@ -14,6 +14,8 @@ import RxDataSources
 
 class CountriesListView: UIView {
     
+    private let pullToRefreshOffset: CGFloat = 44.0
+    
     // MARK:- Outlets
     var tableView : UITableView = {
         let view = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 60), style: .plain)
@@ -31,10 +33,13 @@ class CountriesListView: UIView {
         return view
     }()
     
+    var pullToRefreshView: PullToRefreshView!
+    
     // MARK:- Init
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
         
+        initIndicatorView()
         configureView()
         addSubviews()
         makeConstraints()
@@ -44,12 +49,17 @@ class CountriesListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func initIndicatorView() {
+        pullToRefreshView = PullToRefreshView(offset: pullToRefreshOffset, scrollView: tableView)
+    }
+    
     func configureView() {
         self.backgroundColor = UIColor.white
     }
     
     func addSubviews() {
         addSubview(tableView)
+        addSubview(pullToRefreshView)
         addSubview(activityIndicator)
     }
     
@@ -61,13 +71,20 @@ class CountriesListView: UIView {
         activityIndicator.snp.makeConstraints { (maker) in
             maker.center.equalToSuperview()
         }
+        pullToRefreshView.makeConstraints()
+        pullToRefreshView.snp.makeConstraints { (maker) in
+            maker.left.top.right.equalToSuperview()
+        }
     }
     
     func setLoading(load: Bool) {
         tableView.isUserInteractionEnabled = !load
         if load {
-            activityIndicator.startAnimating()
+            if !pullToRefreshView.isLoad() {
+                activityIndicator.startAnimating()
+            }
         } else {
+            pullToRefreshView.finishLoad()
             activityIndicator.stopAnimating()
         }
     }
