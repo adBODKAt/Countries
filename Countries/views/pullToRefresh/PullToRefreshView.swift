@@ -131,6 +131,8 @@ class PullToRefreshView: UIView {
         }
         var edge = scrollView.contentInset
         edge.top = topInsets
-        scrollView.contentInset = edge
+        UIView.animate(withDuration: 0.15) {
+            self.scrollView.contentInset = edge
+        }
     }
 }
