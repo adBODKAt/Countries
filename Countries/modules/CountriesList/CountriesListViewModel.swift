@@ -37,6 +37,7 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
         let state: Observable<LoadingState>
         let error: Observable<NSError>
         let tableData: Observable<[SectionType]>
+        let noInternetMessage: Observable<NSError?>
     }
     
     // MARK: Dependencies
@@ -50,6 +51,7 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     // MARK: Observables
     private let title:BehaviorRelay<String> = BehaviorRelay(value: "Страны".uppercased())
     private let tableData:BehaviorRelay<[SectionType]> = BehaviorRelay(value: [])
+    private let noInternetMessage = PublishRelay<NSError?>()
     
     // MARK: - initializer
     
@@ -77,7 +79,8 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
         return Output(title: title.asObservable(),
                       state: modelState.state.asObservable(),
                       error: modelState.error.asObservable(),
-                      tableData: tableData.asObservable()
+                      tableData: tableData.asObservable(),
+                      noInternetMessage: noInternetMessage.asObservable()
         )
     }
     
@@ -133,6 +136,10 @@ class CountriesListViewModel: RxViewModelType, RxViewModelModuleType, CountriesL
     }
     
     func handleCellSelectionAt(ip: IndexPath) {
+        if !moduleInputData.reachabilityService.hasInternetConnection {
+            noInternetMessage.accept(moduleInputData.reachabilityService.reachabilityError())
+            return
+        }
         let index = ip.row
         if countries.count > index {
             let name = countries[index].name

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    func showCancellableAlertWith(userAction: UIAlertAction, error: NSError?) {
+    func showCancellableAlertWith(userAction: UIAlertAction?, error: NSError?) {
         var errorMessage = ""
         if let error = error {
             errorMessage = error.localizedDescription
@@ -18,7 +18,9 @@ extension UIViewController {
         }
         
         let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
-        alertController.addAction(userAction)
+        if let action = userAction {
+            alertController.addAction(action)
+        }
         
         let cancelAction = UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil)
         alertController.addAction(cancelAction)

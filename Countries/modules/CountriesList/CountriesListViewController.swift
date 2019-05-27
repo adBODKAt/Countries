@@ -96,6 +96,12 @@ class CountriesListViewController: UIViewController {
                 self?.showAlertMessageFor(error: error)
         }).disposed(by: bag)
         
+        output.noInternetMessage.subscribe(onNext: { [weak self] (error) in
+            if let error = error {
+                self?.showCancellableAlertWith(userAction: nil, error: error)
+            }
+        }).disposed(by: bag)
+        
         customView.pullToRefreshView.loadSwitch.bind(to: repeatAction).disposed(by: bag)
         
         viewModel?.viewReady()
